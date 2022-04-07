@@ -1,0 +1,114 @@
+.row-container {
+    padding: 5px 40px;
+}
+
+.isEven {
+    background: #4faf5f17;
+    /* border-top: 1px solid #4faf5f52; */
+    /* border-bottom: 1px solid #4faf5f52; */
+}
+
+input {
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid var(--select-border-color);
+    outline: none;
+    padding: 10px 15px;
+    color: var(--select-color);
+}
+
+input:focus {
+    color: var(--jf-input-focus-color);
+}
+
+.dynamic-field {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    margin-bottom: 10px;
+    max-width: 500px;
+}
+
+.dynamic-field label {
+    text-align: right;
+    margin-right: 10px;
+    color: var(--select-border-color);
+}
+
+input.ng-invalid.ng-dirty.ng-touched {
+    border-color: rgb(203, 50, 50);
+}
+
+div.button {
+    border: 0;
+    background: #525c65;
+    color: #fff;
+    border-radius: 0;
+    padding: 0 15px;
+    outline: none;
+    height: 42px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.search-drop-down {
+    position: absolute;
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 1px 1px 2px 0 #00000073;
+    top: 43px;
+    width: 80%;
+    z-index: 100;
+}
+
+.search-drop-down .result-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 34px;
+}
+
+.result-list li {
+    padding: 0 20px;
+    font-size: 16px;
+    cursor: pointer;
+    &:nth-child(even) {
+        background-color: #f1f3f8;
+    }
+}
+
+.result-list li:hover {
+    background-color: var(--select-dropdown-background-hover);
+}
+
+.option-wrapper {
+    display: block;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: var(--jf-list-view-background);
+}
+
+input.search {
+    margin: 8px 5%;
+    width: 90%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #d72f3f;
+    background: #eff8f13d;
+    box-shadow: 0 2px 2px #eee;
+}
+
+@media (max-width: 620px) {
+    .dynamic-field {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+    }
+    .row-container {
+        padding: 5px 20px;
+    }
+}

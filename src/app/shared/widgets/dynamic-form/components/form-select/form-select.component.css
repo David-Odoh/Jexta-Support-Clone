@@ -1,0 +1,195 @@
+.row-container {
+    padding: 5px 40px;
+}
+
+.isEven {
+    background: #4faf5f17;
+    /* border-top: 1px solid #4faf5f52; */
+    /* border-bottom: 1px solid #4faf5f52; */
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: .01px;
+    text-overflow: '';
+    overflow: hidden;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 0;
+    color: var(--xplorer-root-node-color);
+    border: 1px solid var(--xplorer-root-node-color);
+    width: 100%;
+    outline: none;
+    background: transparent;
+    background-size: 5px 5px, 5px 5px;
+}
+
+.dynamic-field {
+    display: block;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    margin-bottom: 10px;
+    max-width: 500px;
+}
+
+.dynamic-field label {
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+    color: var(--select-color);
+    margin-bottom: 10px;
+}
+
+.jexta-select-wrapper {
+    position: relative;
+    user-select: none;
+    width: 100%;
+}
+
+.jexta-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--select-border-color);
+    /* border-color: #394a6d; */
+}
+
+.jexta-select_input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    font-size: 14px;
+    /* font-weight: 300; */
+    color: #3b3b3b;
+    height: 40px;
+    line-height: 40px;
+    background: transparent;
+    color: var(--select-color);
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--select-border-color);
+}
+
+.jexta-select_input input {
+    cursor: pointer;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+
+/* input:focus {
+    color: var(--select-color-focus);
+} */
+
+.decoy {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.jexta-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 0;
+    border-top: 0;
+    background: var(--select-dropdown-background);
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    text-transform: capitalize;
+    pointer-events: none;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.jexta-select.open .jexta-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    box-shadow: var(--background-ultra-light-shadow);
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.jexta-option {
+    position: relative;
+    display: block;
+    padding: 0 16px 0 22px;
+    text-transform: capitalize;
+    font-size: 16px;
+    /* font-weight: 300; */
+    color: var(--select-dropdown-color);
+    line-height: 34px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.jexta-option:hover {
+    cursor: pointer;
+    background-color: var(--select-dropdown-background-hover);
+}
+
+.jexta-option.selected {
+    color: var(--select-dropdown-color-selected);
+    background-color: var(--select-dropdown-background-selected);
+}
+
+.arrow {
+    position: relative;
+    height: 12px;
+    width: 12px;
+}
+
+.arrow::before,
+.arrow::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 0.12rem;
+    height: 100%;
+    transition: all 0.5s;
+}
+
+.arrow::before {
+    left: -4px;
+    transform: rotate(45deg);
+    background-color: var(--select-color);
+    ;
+}
+
+.arrow::after {
+    left: 4px;
+    transform: rotate(-45deg);
+    background-color: var(--select-color);
+    ;
+}
+
+.open .arrow::before {
+    left: -4px;
+    transform: rotate(-45deg);
+}
+
+.open .arrow::after {
+    left: 4px;
+    transform: rotate(45deg);
+}
+
+@media (max-width: 620px) {
+    .dynamic-field {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+    }
+    .row-container {
+        padding: 5px 20px;
+    }
+}

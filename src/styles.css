@@ -1,0 +1,300 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@font-face {
+    font-family: "OS L";
+    src: url("assets/fonts/open-sans/OpenSans-Light.ttf") format("truetype");
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OS LT";
+    src: url("assets/fonts/open-sans/OpenSans-LightItalic.ttf") format("truetype");
+    font-weight: lighter;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "OS R";
+    src: url("assets/fonts/open-sans/OpenSans-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OS B";
+    src: url("assets/fonts/open-sans/OpenSans-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OS BL";
+    src: url("assets/fonts/open-sans/OpenSans-BoldItalic.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "OS EB";
+    src: url("assets/fonts/open-sans/OpenSans-ExtraBold.ttf") format("truetype");
+    font-weight: bolder;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OS EBL";
+    src: url("assets/fonts/open-sans/OpenSans-ExtraBoldItalic.ttf") format("truetype");
+    font-weight: bolder;
+    font-style: italic;
+}
+
+
+/* JEXTALY THEME STYLE --- IMPORTED */
+
+:root {
+    /******
+  Colors
+  ******/
+    /* Side Bar Nav */
+    --sidebarNav-border: #011627;
+    --sidebarNav-background: #0a7790;
+    --sidebarNav-background-hover: #4ba6ba;
+    --sidebarNav-color: #fff;
+    --sidebarNav-color-hover: #fff;
+    --sidebarNav-logo-background: var(--sidebarNav-background);
+    --sidebarNav-logo-background-active: #252526;
+    --sidebarNav-logo-color: #44b5af;
+    /* Top Nav */
+    /* // --basic-navbar-background: linear-gradient(135deg, #44b5af 0%,#5392c7 100%); */
+    --basic-navbar-background: #2c96a4;
+    --basic-navbar-btn-background: #D72F3F;
+    --basic-navbar-btn-color: #fff;
+    --basic-navbar-border-color: #0a7790;
+    --primary-menu-background-hover: var(--sidebarNav-background);
+    /* Secondary Nav */
+    --secondaryNav-background: #6bcdcc;
+    --secondaryNav-input-background: #2c96a4;
+    /* Xplorer Panel*/
+    /* // --xplorer-background: #159a9a; */
+    --xplorer-color: #333;
+    /* // --xplorer-root-node-background: #6bcdcc; */
+    --xplorer-root-node-background: #fce2bd;
+    --xplorer-root-node-color: #838383;
+    --xplorer-background: antiquewhite;
+    --xplorer-children-nodes-background: antiquewhite;
+    --xplorer-root-node-border: #2c96a4;
+    /* Tree Item */
+    --tree-item-focus-background: #6bcdcc7d;
+    --tree-item-focus-color: #333;
+    --tree-item-hover-background: #6bcdcc7d;
+    --tree-item-hover-color: #000;
+    --tree-item-color-english: #333;
+    --tree-item-color-french: #333;
+    --tree-item-color-dutch: #333;
+    --tree-item-hover-color-english: var(--tree-item-hover-color);
+    --tree-item-hover-color-french: var(--tree-item-hover-color);
+    --tree-item-hover-color-dutch: var(--tree-item-hover-color);
+    --tree-item-svg-fill: brightness(0);
+    --tree-item-hover-svg-fill: brightness(0);
+    /* Content Area */
+    --content-area-background: #fff;
+    /* Footer */
+    --footer-background: #4ba4ba;
+    --footer-color: #FFFFFF;
+    /* Dialog */
+    --dialog-backdrop: rgba(255, 255, 255, .4);
+    /* // --dialog-background: #6bcdcc; */
+    --dialog-background: #fff;
+    --dialog-color-one: var(--sidebarNav-background);
+    --dialog-color-two: #111;
+    --dialog-color-three: #000;
+    --dialog-confirm-btn-background: transparent;
+    --dialog-confirm-btn-color: var(--dialog-color-three);
+    --dialog-confirm-btn-border: var(--table-tr-background-even2);
+    --dialog-confirm-btn-background-hover: var(--table-tr-background-even2);
+    --dialog-confirm-btn-color-hover: #000;
+    --dialog-confirm-btn-border-hover: var(--table-tr-background-even2);
+    --dialog-text-background: #3b92a6;
+    /* Select */
+    --select-border-color: var(--xplorer-root-node-color);
+    --select-color: var(--xplorer-root-node-color);
+    --select-color-focus: #fff;
+    --select-dropdown-background: #fff;
+    --select-dropdown-color: #3b3b3b;
+    --select-dropdown-background-hover: #4faf5f40;
+    --select-dropdown-background-selected: #faebd7;
+    --select-dropdown-color-selected: inherit;
+    --select-dropdown-border-color: #fff;
+    /* Explorer Search */
+    --explorer-search-background: #fff;
+    --explorer-search-color: #000;
+    --explorer-search-border-color: #0ef4e8;
+    /* Tabs */
+    --tab-background-active: rgba(35, 155, 55, 0.8);
+    --tab-color-active: #fff;
+    --tab-background: #0a7790ab;
+    --tab-color: var(--explorer-search-border-color);
+    --tab-body-background: #f3f3f3;
+    --content-area-tab-background: transparent;
+    --content-area-tab-color: rgba(74, 74, 74, 0.87);
+    --content-area-sub-tab-background: rgb(44, 150, 164);
+    --content-area-sub-tab-color: rgba(255, 255, 255, 0.87);
+    /* Submit Button */
+    --submit-btn-background: rgb(11, 120, 145);
+    --submit-btn-color: rgb(168, 210, 216);
+    --submit-btn-background-active: #d72f3f;
+    --submit-btn-color-active: #fff;
+    --submit-btn-background-active-hover: #f64051;
+    --submit-btn-color-active-hover: #fff;
+    /* Table */
+    --table-border: var(--details-table-td-th-border);
+    --table-th-background: var(--xplorer-background);
+    --table-th-color: #000;
+    --table-tr-background-odd: #fff;
+    --table-tr-background-even2: #6bcdcc;
+    --table-tr-background-even: #f3f3f3;
+    --table-tr-color-odd: #000;
+    --table-tr-color-even: #000;
+    --table-spinner-color: #fff;
+    --details-table-body-background: #f3f3f3;
+    --details-table-body-boxshadow: 5px 8px 10px #4545456b;
+    --details-table-body-border: var(--details-table-td-th-border);
+    /* // --details-table-wrapper-background: #45b3b1; */
+    --details-table-wrapper-background: #f3f3f3;
+    --details-table-key-background: #faebd7;
+    --details-table-key-color: inherit;
+    --details-table-key-border: 1px solid #a19f9f;
+    --details-table-td-th-border: 1px solid #a19f9f;
+    --table-tab-trigger-border: var(--details-table-td-th-border);
+    /* Striped Background */
+    --stripe-background-odd: #6bcdcc;
+    --stripe-background-even: transparent;
+    --stripe-separator-background: #6bcdcc;
+    /*JX - ProgressBar */
+    --jx-progress-track-background-even: rgba(0, 155, 202, 0.3);
+    --jx-progress-track-background-odd: #ffffffdb;
+    --jx-progress-fill-background-uploaded: #40ad79;
+    --jx-progress-fill-background-failed: #efce4a;
+    --jx-progress-fill-background-canceled: #3d8bc1;
+    --jx-progress-fill-background-parsed: #d72f3f;
+    --jx-progress-fill-color-uploaded: #0a7790;
+    --jx-progress-fill-color-failed: #efce4a;
+    --jx-progress-fill-color-canceled: #3d8bc1;
+    --jx-progress-fill-color-parsed: #d72f3f;
+    /* Expand Btn */
+    --expand-btn-border: #0a7790;
+    --expand-btn-background: #0a77906e;
+    --download-filter-background: #6bcdcc;
+    --download-filter-color: #000;
+    --download-filter-color2: #3d3d3d;
+    /* Menu Dropdown */
+    --menu-dropdown-background: #0a7790;
+    --menu-dropdown-background-hover: #6bcdcc;
+    --menu-dropdown-color: #fff;
+    --menu-dropdown-color-hover: #000;
+    --menu-dropdown-border-color: rgba(253, 253, 253, 0.35);
+    /* Pagination */
+    --pagination-btn-background: transparent;
+    --pagination-btn-border: var(--table-tr-background-even2);
+    --pagination-btn-color: var(--table-tr-color-even);
+    --pagination-btn-background-hover: transparent;
+    --pagination-btn-color-hover: #fff;
+    --pagination-btn-border-hover: #fff;
+    --pagination-btn-previous-next-color-hover: #000;
+    --pagination-btn-previous-next-background-hover: transparent;
+    --pagination-btn-previous-next-color: #000;
+    --pagination-btn-previous-next-background: transparent;
+    --pagination-btn-background-active: #2c96a4;
+    --pagination-btn-border-active: #2c96a4;
+    --pagination-btn-color-active: #fff;
+    /* Stat Aside */
+    --stat-aside-background: #fff;
+    --stat-aside-gutter-background: #faebd7;
+    --stat-aside-gutter-hr-background: #000;
+    --stat-aside-counter-background: #40ad79;
+    --stat-aside-counter-color: #fff;
+    --stat-aside-list-border: 1px solid #0a7790;
+    --stat-aside-btn-background: #d72f3f;
+    /* Shadows */
+    --background-ultra-light-shadow: 5px 2px 5px #17171785;
+    --dropdown-shadow-color: var(--background-ultra-light-shadow);
+    --background-light-shadow: 5px 8px 10px #4545456b;
+    --background-medium-shadow: 5px 8px 10px #00000063;
+    /* --background-thick-shadow: 5px 8px 10px #171717; */
+    --fallback-content-area-color: rgb(0, 0, 0);
+    /* Widgets */
+    --online-offline-notification-background: #305c91;
+    --online-offline-notification-color: #fff;
+    --toggle-color-activate: #3d3d3d;
+    --toggle-color: #3d3d3d;
+    /* Stat Cards */
+    --stat-card-background: var(--table-tr-background-even2);
+    --stat-card-counter-background: var(--basic-navbar-btn-background);
+    --stat-card-shadow: none;
+    --stat-card-counter-shadow: none;
+    --stat-card-en-color: #333;
+    --stat-card-fr-color: #333;
+    --stat-card-po-color: #333;
+    /* Datepicker */
+    --datepicker-background: beige;
+    /* Score Card */
+    --score-card-total-background: #b3dcd2;
+    --score-card-handle-back: #2c96a4;
+    /* Card One */
+    --card-one-background: #fff;
+    /* Jextaly Float */
+    --jf-list-view-background: rgb(79 175 95 / 12%);
+    --jf-background: #2c96a4;
+    --jf-background-two: #f5f7fb73;
+    --jf-background-three: var(--table-tr-background-even2);
+    --jf-padding: 20px 40px;
+    --jf-border: 1px solid #0a7790;
+    --jf-label-background: #faebd7;
+    --jf-overlay-background: #ffffffa6;
+    --jf-boxshadow: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+    --jf-search-match-text-color: red;
+    --jf-tl-banner: #fafafa;
+    --jf-slider-background-image: linear-gradient(45deg, #f3f3f3, #f3f3f3);
+    --jf-input-focus-color: #000000;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.icon-spin {
+    display: inline-block;
+    -webkit-animation: spin 1s infinite linear;
+    -moz-animation: spin 1s infinite linear;
+    -o-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+    font-size: 44px;
+    font-weight: 700;
+    cursor: progress;
+}
+
+.form-overlay {
+    display: block;
+    position: absolute;
+    background: var(--jf-overlay-background);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.form-overlay i.la.la-refresh.icon-spin {
+    color: var(--select-color);
+    top: 44%;
+    left: 48%;
+    position: absolute;
+}

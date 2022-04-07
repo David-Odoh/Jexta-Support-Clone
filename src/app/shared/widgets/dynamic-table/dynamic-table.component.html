@@ -1,0 +1,57 @@
+<table [ngClass]="float ? 'jextaly-float': ''">
+    <tr>
+        <th *ngFor="let th_col of th_columns">{{th_col}}</th>
+        <th *ngIf="actions">Action</th>
+    </tr>
+    <!-- Loading and Internet Error -->
+    <tr *ngIf="!td_columns">
+        <td [attr.colspan]="spinnerColSpan">
+            <div class="loading" *ngIf="!td_columns && !internetConnectionIssue && !stopLoading">
+                <mat-option class="-spinner-container" style="display:grid; justify-content: center; align-items:center;">
+                    <mat-spinner diameter="48" id="matSpinner"></mat-spinner>
+                </mat-option>
+            </div>
+            <div *ngIf="!td_columns && internetConnectionIssue && stopLoading" class="internet-issue -flex-center ">
+                <span>
+          <i class="la la-wifi"></i>
+          <h3>Please Check Your Internet</h3>
+        </span>
+            </div>
+        </td>
+    </tr>
+    <!--/End Loading and Internet Error -->
+    <ng-container *ngIf="td_columns">
+        <tr *ngFor="let td_col of td_columns | paginate: { id: paginationId, itemsPerPage: _pagesize, currentPage: _pagenumber, totalItems: _total}; let i = index">
+            <td *ngIf="th_columns.includes('#')">{{i + 1}}</td>
+            <td *ngFor="let col of spreadIntoArray(td_col, i)">{{col}}</td>
+            <td *ngIf="actions">
+                <span class="btn-group">
+          <ng-container *ngxPermissionsOnly="['read:any']">
+            <button class="--success --success-hover" (click)="getDetails(td_col)" *ngIf="actions.includes('details')"
+              title="Details">
+              <i class="la la-eye"></i>
+            </button>
+          </ng-container>
+  
+          <ng-container *ngxPermissionsOnly="['update:any']">
+            <button class="--warning --warning-hover" (click)="doEdit(td_col?._id)" *ngIf="actions.includes('edit')"
+              title="Edit">
+              <i class="la la-pencil"></i>
+            </button>
+          </ng-container>
+  
+          <ng-container *ngxPermissionsOnly="['delete:any']">
+            <button class="--danger --danger-hover" (click)="doDelete(td_col?._id)" *ngIf="actions.includes('delete')"
+              title="Delete">
+              <i class="la la-close"></i>
+            </button>
+          </ng-container>
+        </span>
+            </td>
+        </tr>
+    </ng-container>
+</table>
+<div class="pagination-wrapper">
+    <pagination-controls *ngIf="td_columns" class="my-pagination" (pageChange)="nextPage($event)" [id]="paginationId">
+    </pagination-controls>
+</div>

@@ -1,0 +1,14 @@
+<div class="d-mssge" *ngIf="data">
+  <p class="card-text"><span class="question">{{data.question}}</span>
+  </p>
+</div>
+<div>
+  <div class="btn-outer" mat-dialog-actions>
+    <button class="takeAction one" [mat-dialog-close]=false>
+      NO
+    </button>
+    <button class="takeAction one" [mat-dialog-close]="data">
+      YES
+    </button>
+  </div>
+</div>

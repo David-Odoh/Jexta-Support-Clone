@@ -1,0 +1,16 @@
+
+@mixin jx-anchor-solid-before($color) {
+        background-color: $color !important;
+}
+
+@mixin jx-anchor-solid-after($color) {
+        background-color: $color !important;
+}
+
+@mixin jx-anchor-gradient-before($start-color, $end-color) {
+        @include directional-gradient(-29deg, $start-color, $end-color);
+}
+
+@mixin jx-anchor-gradient-after($start-color, $end-color) {
+        @include directional-gradient(-29deg, $start-color, $end-color);
+}

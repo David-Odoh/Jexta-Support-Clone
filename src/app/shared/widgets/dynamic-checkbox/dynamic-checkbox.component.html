@@ -1,0 +1,9 @@
+<div class="checkbox-widget">
+    <span class="checkbox_wrapper">
+      <div class="single_checkbox">
+        <input type="checkbox" [id]="'checkbox' + index" class="checkbox_input" (click)="makeSelection()"
+          [ngClass]="(isChecked || isAllChecked) ? 'checked' : ''">
+        <label [for]="'checkbox' + index" class="checkbox_label">{{label}}</label>
+      </div>
+    </span>
+</div>

@@ -1,0 +1,93 @@
+.row-container {
+    padding: 5px 40px;
+}
+
+.isEven {
+    background: #4faf5f17;
+    /* border-top: 1px solid #4faf5f52; */
+    /* border-bottom: 1px solid #4faf5f52; */
+}
+
+input {
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid var(--select-border-color);
+    outline: none;
+    padding: 10px 15px;
+    color: var(--select-color);
+    background: transparent;
+}
+
+input:focus {
+    color: var(--jf-input-focus-color);
+}
+
+.la.la-close {
+    cursor: pointer;
+}
+
+.dynamic-field {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    margin-bottom: 10px;
+    max-width: 500px;
+}
+
+.dynamic-field label {
+    text-align: right;
+    margin-right: 10px;
+    color: var(--select-border-color);
+}
+
+input.ng-invalid.ng-dirty.ng-touched {
+    border-color: rgb(203, 50, 50);
+}
+
+div.button {
+    border: 0;
+    background: #525c65;
+    color: #fff;
+    border-radius: 0;
+    padding: 0 15px;
+    outline: none;
+    height: 42px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.list-view {
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    border: 1px dashed;
+    background-color: inherit;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.option-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: var(--jf-list-view-background);
+}
+
+@media (max-width: 620px) {
+    .dynamic-field {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+    }
+    .row-container {
+        padding: 5px 20px;
+    }
+}

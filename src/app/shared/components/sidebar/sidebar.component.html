@@ -1,0 +1,65 @@
+<section class="sidebar-wrapper h-100vh justify-content-between flex-wrap flex-lg-column jx-d-flex">
+    <div class="side-menu-logo flex-lg-column d-none d-lg-block">
+        <span class="nav jx-t-center jx-d-flex justify-content-center align-items-center lh-base">
+            <a routerLink="/" class="cubed-logo jx-d-block">
+                <span class="jx-fw-bolder">JEXTA</span>
+        </a>
+        </span>
+    </div>
+
+    <div class="side-menu-nav flex-lg-column my-auto">
+        <ul class="navlist jx-d-flex flex-wrap jx-unstyle justify-content-center jx-pl-0 jx-mb-0 nav-pills">
+
+            <!-- Upper Section Nav Items -->
+            <ng-container *ngFor="let navlink of navLinks">
+                <li [ngbTooltip]="navlink?.toolTip" tooltipClass="jx-tip" [id]="navlink?.name" class="nav-item jx-my-033 jx-mx-0" [routerLink]="navlink?.url">
+                    <a [class.active]="activeNavLink == navlink" (click)="selectNavLink(navlink)" class="nav-link js-fw-500 jx-d-block jx-t-center jx-fs-24 jx-my-0 jx-mx-auto jx-p-0">
+                        <i [class]="navlink?.iconClasses"></i>
+                    </a>
+                </li>
+            </ng-container>
+
+            <!-- Mobile Account Nav Item -->
+            <ng-container>
+                <li class="nav-item jx-my-033 jx-mx-0 dropup d-lg-none" [ngClass]="accountMenu2 ? 'show' : ''" (click)="toggleMenu('account2')" (clickOutside)="close('account2')">
+                    <a class="nav-link js-fw-500 jx-d-block jx-t-center jx-fs-24 jx-my-0 jx-mx-auto jx-p-0">
+                        <img src="assets/images/users/avatar-1.jpg" class="profile-user rounded-circle">
+                    </a>
+
+                    <account-menu [ngClass]="accountMenu2 ? 'show' : ''" [accountMenu]="accountMenu2" [accountLinks]="accountLinks"></account-menu>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+
+    <div class="flex-lg-column d-none d-lg-block">
+        <ul class="second-navlist jx-d-flex flex-wrap jx-unstyle justify-content-center jx-pl-0 jx-mb-0">
+
+            <!-- Extra Pages Nav Item -->
+            <li class="extras nav-item jx-my-033 jx-mx-0 dropup" [ngClass]="extraPageMenu ? 'show' : ''" (click)="toggleMenu('extra')" (clickOutside)="close('extra')">
+                <a class="nav-link js-fw-500 jx-d-block jx-t-center jx-fs-24 jx-my-0 jx-mx-auto jx-p-0">
+                    <i class="ri-pages-line"></i>
+                </a>
+
+                <extras-menu [ngClass]="extraPageMenu ? 'show' : ''" [extraPageMenu]="extraPageMenu" [extraPagesLinks]="extraPagesLinks"></extras-menu>
+            </li>
+
+            <!-- Account Nav Item -->
+            <li class="nav-item jx-my-033 jx-mx-0 dropup" [ngClass]="accountMenu ? 'show' : ''" (click)="toggleMenu('account')" (clickOutside)="close('account')">
+                <a class="nav-link js-fw-500 jx-d-block jx-t-center jx-fs-24 jx-my-0 jx-mx-auto jx-p-0">
+                    <img src="assets/images/users/avatar-1.jpg" class="profile-user rounded-circle">
+                </a>
+
+                <account-menu [ngClass]="accountMenu ? 'show' : ''" [accountMenu]="accountMenu" [accountLinks]="accountLinks"></account-menu>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+<!-- <div ngbTooltip="Icebox!">Test 1</div>
+<div ngbTooltip="Icebox!" triggers="click:mouseout">Test 2</div>
+<div ngbTooltip="Icebox!" triggers="click:mouseout focus">Test 3</div>
+<div ngbTooltip="Icebox!" triggers="manual" #t="ngbTooltip" (click)="t.open()"
+    (document:keydown.esc)="t.open()">
+    Test 4</div> -->

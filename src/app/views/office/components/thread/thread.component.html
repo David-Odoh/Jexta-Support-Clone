@@ -1,0 +1,45 @@
+<div class="thread-container">
+    <div class="thread-wrap jx-p-relative">
+        <div class="header jx-d-flex justify-content-between align-items-center">
+            <div class="justify-left jx-d-flex h-per-100">
+                <div class="back jx-fs-18  align-items-center jx-px-1" (click)="requestThreadClose()"><i class="la la-angle-left"></i></div>
+                <div class="ticketId jx-fs-28 jx-ml-1 jx-d-flex align-items-center jx-t-capitalize">{{ticketId}}</div>
+            </div>
+            <div class="justify-right jx-d-flex jx-fs-22 h-per-100 align-items-center jx-px-1">
+                <span class="actionIcons"><i class="ri-reply-all-fill"></i></span>
+                <span class="actionIcons"><i class="ri-user-6-fill"></i></span>
+                <span class="actionIcons"><i class="ri-flag-fill"></i></span>
+                <span class="actionIcons"><i class="ri-more-fill jx-fs-26"></i></span>
+                <!-- <span class="actionIcons"><i class="ri-reply-fill"></i></span> -->
+                <!-- <span class="actionIcons"><i class="ri-edit-box-fill"></i></span> -->
+                <!-- <span class="actionIcons"><i class="ri-delete-bin-4-fill"></i></span> -->
+                <!-- <span class="actionIcons"><i class="las la-users jx-fs-26"></i></span> -->
+            </div>
+        </div>
+        <div class="thread-content jx-px-1 jx-py-1">
+            <app-thread-content></app-thread-content>
+        </div>
+        <div class="composer-container">
+            <div class="obscure-thread-content jx-p-absolute w-per-100"></div>
+            <div class="composer-wrap">
+                <div class="dynamic-composer jx-pb-2 jx-mx-1">
+                    <div class="composer-message-area">
+                        <form [formGroup]="form">
+                            <angular-editor id="editor2" [config]="config1" formControlName="composer" (ngModelChange)="onChange($event)"></angular-editor>
+                        </form>
+                    </div>
+                    <div class="composer-btns jx-d-flex justify-content-end jx-gap-10">
+                        <div class="other-actions">
+                            <span class="dc-btn" ngbTooltip="Canned Response" tooltipClass="jx-tip" placement="top"><i class="fa fa-save"></i></span>
+                            <span class="dc-btn" ngbTooltip="Signature Options" tooltipClass="jx-tip" placement="top" (click)="toggleToolBar()"><i class="fa fa-font"></i></span>
+                            <span class="dc-btn" ngbTooltip="Manage Status" tooltipClass="jx-tip" placement="top"><i class="fa fa-paperclip"></i></span>
+                        </div>
+                        <button class="dc-btn send">Send</button>
+                    </div>
+                </div>
+
+                <!-- <app-dynamic-composer id="editor1" [(ngModel)]="htmlContent1" [config]="config1" (ngModelChange)="onChange($event)"> </app-dynamic-composer> -->
+            </div>
+        </div>
+    </div>
+</div>

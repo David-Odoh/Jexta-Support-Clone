@@ -1,0 +1,59 @@
+<div class="tickets-container">
+    <div class="tickets-wrapper h-100vh">
+        <div class="tickets-header">
+            <div class="tickets-title jx-fs-26 jx-fw-normal jx-px-1 jx-py-1 jx-d-flex justify-content-between">
+                <span>{{title}}s</span>
+                <span class="create-new cursor-pointer" (click)="requestToOpenTicketCreate()">
+                    <i [ngbTooltip]="'New ' + title" tooltipClass="jx-tip left" placement="left" class="la la-plus"></i>
+                </span>
+            </div>
+            <div class="tickets-controls">
+                <div class="tickets-filters" [class.show-group-btns]="multiSelect">
+                    <div class="tickets-search-wrapper">
+                        <!-- Search Icon -->
+                        <i class="search ri-search-2-line"></i>
+                        <div class="search-input">
+                            <!-- Search Box -->
+                            <input placeholder="Search directory" #searchbox type="text" (keyup)="searchTerm$.next($event.target.value)">
+
+                            <!-- Clear Search Field Btn -->
+                            <button class="close-btn" *ngIf="showClearBtn" (click)="clearSearchBox()">
+                                <i class="ri-close-line"></i>
+                            </button>
+                            <!-- Separator -->
+                            <i class="line"></i>
+
+                            <!-- Cart -->
+                            <button ngbTooltip="Select Multiple" tooltipClass="jx-tip" placement="top" class="action">
+                                <app-dynamic-checkbox (check)="toggleMultiSelect($event)"></app-dynamic-checkbox>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tickets-group-action-btns jx-d-flex justify-content-center jx-p-relative">
+                    <div class="group-btns jx-d-flexs" [class.show-group-btns]="multiSelect">
+                        <span *ngFor="let btn of groupActionBtns" container="body" [ngbTooltip]="btn?.toolTip" tooltipClass="jx-tip" placement="bottom"><i [class]="btn?.iconClasses"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="tickets-status jx-d-flex justify-content-between jx-mx-1 jx-my-1">
+                <div class="tickets-status-select">
+                    <div class="select-name is-active" (clickOutside)="closeStatusMenu()">
+                        <div class="select-active-item" (click)="openStatusMenu()">
+                            <div class="active-item">{{selectedStatus}}</div>
+                        </div>
+
+                        <div class="select-list" *ngIf="openStatusList">
+                            <div *ngFor="let status of statusList" class="select-item" (click)="selectStatusOption(status)">{{status?.displayName}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tickets-count jx-fs-22">207</div>
+            </div>
+        </div>
+
+        <div class="tickets-list h-per-100" [class.show-group-btns]="multiSelect">
+            <app-ticket-list [tickets]="tickets" [multiSelectActive]="multiSelect"></app-ticket-list>
+        </div>
+    </div>
+</div>

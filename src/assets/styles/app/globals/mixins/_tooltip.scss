@@ -1,0 +1,23 @@
+@mixin jx-tip-solid-colors($color, $position_value) {
+    .tooltip-inner {
+        background-image: linear-gradient(-29deg, $color, $color) !important;
+    }
+    .arrow::before {
+        border-color: transparent !important;
+        // @if $position_value=="" {
+        //     border-top-color: $color !important;
+        // }
+        // @else border-#{$position_value}-color: $color !important;
+        border-#{$position_value}-color: $color !important;
+    }
+}
+
+@mixin jx-tip-gradient-colors($start-color, $end-color) {
+    .tooltip-inner {
+        @include directional-gradient(-29deg, $start-color, $end-color);
+    }
+    .arrow::before {
+        border-color: transparent !important;
+        border-top-color: $start-color !important;
+    }
+}

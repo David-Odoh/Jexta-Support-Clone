@@ -1,0 +1,75 @@
+.row-container {
+    padding: 5px 40px;
+}
+
+.isEven {
+    background: #4faf5f17;
+    /* border-top: 1px solid #4faf5f52; */
+    /* border-bottom: 1px solid #4faf5f52; */
+}
+
+.dynamic-field {
+    display: block;
+    margin-bottom: 10px;
+    max-width: 500px;
+}
+
+.dynamic-field label {
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: var(--select-color);
+}
+
+::ng-deep .cke_inner,
+ ::ng-deep .cke_reset,
+ ::ng-deep .cke_top,
+ ::ng-deep .cke_bottom {
+    background: transparent !important;
+}
+
+::ng-deep .cke_chrome {
+    border: 1px solid var(--select-color) !important;
+    line-height: 1.5 !important;
+}
+
+ckeditor.ng-touched.ng-dirty.ng-invalid ::ng-deep .cke_chrome {
+    border: 1px solid rgb(203, 50, 50) !important;
+}
+
+::ng-deep .cke_top {
+    border-bottom: 1px solid var(--select-color) !important;
+    background: #fff !important;
+}
+
+::ng-deep .cke_bottom {
+    border-top: 1px solid var(--select-color) !important;
+}
+
+::ng-deep .cke_wysiwyg_frame,
+::ng-deep .cke_wysiwyg_div {
+    background-color: transparent !important;
+}
+
+::ng-deep .cke_reset_all,
+ ::ng-deep .cke_reset_all *,
+ ::ng-deep .cke_reset_all a,
+ ::ng-deep .cke_reset_all textarea {
+    color: var(--select-color) !important;
+}
+
+ ::ng-deep body.cke_editable.cke_editable_themed.cke_show_borders {
+    background-color: transparent !important;
+    color: var(--select-color) !important;
+}
+
+@media (max-width: 620px) {
+    .dynamic-field {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+    }
+    .row-container {
+        padding: 5px 20px;
+    }
+}

@@ -1,0 +1,14 @@
+.product-list {
+    & > div {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) { 
+    .product-list {
+        & > div {
+            gap: 20px;
+        }
+    }
+
+}

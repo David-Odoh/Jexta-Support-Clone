@@ -1,0 +1,18 @@
+<div class="row-container" [class.isEven]="isEven">
+    <div class="dynamic-field form-input" [formGroup]="group">
+        <label *ngIf="config.label">{{ config?.label }}</label>
+        <div (clickOutside)="getInput(myInput)">
+            <div style="display: flex;">
+                <input type="text" style="display: none;" [formControlName]="config.name">
+                <input [type]="config.valueType" [attr.placeholder]="config.placeholder" #myInput (keyup)="searchTerm$.next($event.target.value)">
+                <div class="button" (click)="getInput(myInput)">Add</div>
+            </div>
+            <div class="option-wrapper" *ngIf="options?.length > 0">
+                <div class="list-view" *ngFor="let option of options" style="text-transform: capitalize;" (click)="edit(option)">
+                    {{option?.label}}
+                    <i class="la la-close" (click)="remove(option)"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

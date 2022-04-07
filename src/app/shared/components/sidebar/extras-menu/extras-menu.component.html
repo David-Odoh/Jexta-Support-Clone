@@ -1,0 +1,5 @@
+<ng-container *ngFor="let ex_link of extraPagesLinks">
+    <a class="dropdown-item jx-fs-16" [routerLink]="ex_link?.url">{{ex_link?.name}}
+        <!-- <i class="float-right text-muted" [ngClass]="ex_link?.iconClasses"></i> -->
+    </a>
+</ng-container>

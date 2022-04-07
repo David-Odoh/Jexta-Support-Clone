@@ -1,0 +1,11 @@
+form.jextaly-float {
+    /* background: var(--jf-background-two); */
+    /* padding: var(--jf-padding); */
+    /* border: var(--jf-border); */
+    /* box-shadow: var(--jf-boxshadow); */
+    padding: 10px 0;
+}
+
+form.dynamic-form:nth-child(odd) .row-container {
+    background: #eee !important;
+}

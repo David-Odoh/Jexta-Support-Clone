@@ -1,0 +1,139 @@
+<section class="session-wrap jx-d-flex justify-content-center align-items-center">
+    <div class="container jx-mx-auto jx-fs-16">
+        <div class="wrapper animated bounceInLeft">
+
+            <div class="side_cover_banner jx-d-grid jx-py-2 jx-px-0 jx-m-0 justify-content-center align-items-center">
+                <a style="text-align: center">
+                    <span class="icebox-logo jx-fs-42 jx-fw-normal jx-t-uppercase lh-sm jx-ls-12" style="color: #fff;">
+                        Jexta
+                    </span>
+                    <p>
+                        <span routerLink="/sessions/signin" class="signup_btn jx-d-lg-block jx-mt-3 jx-p-1 jx-fs-18 cursor-pointer">
+                            SignIn
+                        </span>
+                    </p>
+                    <p>
+                        <span routerLink="/store" class="signup_btn jx-d-lg-block jx-mt-1 jx-p-1 jx-fs-18 cursor-pointer">
+                            Back to Store
+                        </span>
+                    </p>
+                </a>
+            </div>
+
+            <div class="icebox jx-p-2 jx-rounded-0 jx-mt-0 jx-border-0">
+                <div id="icebox_title" class="jx-p-2 jx-pb-1 jx-d-block w-per-100 jx-t-center jx-fs-30 lh-sm">Let's Get Started</div>
+
+                <div class="icebox_tabs jx-m-0 jx-p-0 jx-pb-0 h-auto cursor-pointer">
+                    <a><span class="cust inactive_tab" [class.Custactive]="Custactive"
+                            (click)="activeCustomer()">SignUp as
+                            Customer</span></a>
+                    <a><span class="ven inactive_tab" [class.Venactive]="Venactive" (click)="activeVendor()">SignUp as
+                            Vendor</span></a>
+                </div>
+
+                <form [formGroup]="iceboxForm" (submit)="icebox()" class="jx-p-1 jx-pt-0" *ngIf="userTypeId == 1; else vendorForm1">
+
+                    <!-- Validation Message -->
+                    <div *ngIf="(iceboxForm.controls['email'].errors?.required && (iceboxForm.controls['email'].touched || iceboxForm.controls['email'].dirty))" class="invalid animated bounceIn">
+                        Required.
+                    </div>
+                    <div *ngIf="(iceboxForm.controls['email'].errors?.email)" class="invalid animated bounceIn">
+                        Kindly enter a valid email address.
+                    </div>
+                    <!--/End Validation Message -->
+
+                    <div class="input-bound jx-m-0">
+                        <img src="assets/images/sessions/mail_icon.png" alt="">
+                        <input type="email" formControlName="email" class="Email_Address w-per-100 jx-p-1 jx-border jx-rounded jx-mt-0 jx-mr-2 jx-mb-05 jx-ml-0 jx-pl-4 jx-fs-13 lh-sm" placeholder="Customer Email Address" autocomplete="new-email" id="email">
+                    </div>
+
+                    <!-- Validation Message -->
+                    <div *ngIf="(iceboxForm.controls['password'].errors?.required && (iceboxForm.controls['password'].touched || iceboxForm.controls['password'].dirty))" class="invalid animated bounceIn">
+                        Required.
+                    </div>
+                    <div *ngIf="(iceboxForm.controls['password'].errors?.minlength)" class="invalid animated bounceIn">
+                        Minimum Length is 6.
+                    </div>
+                    <!--/End Validation Message -->
+
+                    <div class="input-bound jx-m-0">
+                        <img src="assets/images/sessions/pass.png" alt="" class="_password ">
+                        <input type="password" formControlName="password" class="password w-per-100 jx-p-1 jx-border jx-rounded jx-mt-0 jx-mr-2 jx-mb-05 jx-ml-0  jx-pl-4 jx-fs-13 lh-sm" placeholder="Customer Password" autocomplete="new-password" id="password">
+                    </div>
+
+                    <!-- Validation Message -->
+                    <div *ngIf="(iceboxForm.controls['username'].errors?.required && (iceboxForm.controls['username'].touched || iceboxForm.controls['username'].dirty))" class="invalid animated bounceIn">
+                        Required.
+                    </div>
+                    <!--/End Validation Message -->
+                    <div class="input-bound jx-m-0">
+                        <img src="assets/images/sessions/acct_name.png" alt="" class="user">
+                        <input type="text" formControlName="username" class="username w-per-100 jx-p-1 jx-border jx-rounded jx-mt-0 jx-mr-2 jx-mb-05 jx-ml-0  jx-pl-4 jx-fs-13 lh-sm" placeholder="Customer Username" autocomplete="new-username" id="username">
+                    </div>
+
+                    <div class="full jx-m-0">
+                        <button class="w-per-100 jx-p-1 jx-border-0 jx-fs-15 jx-t-uppercase lh-sm jx-border jx-rounded jx-m-1 jx-ml-0" type="submit" [disabled]="!iceboxForm.valid" id="submit_btn">
+                            {{_iceboxBtnMssg}}
+                        </button>
+                    </div>
+
+                    <div class="footer_links jx-m-0 jx-d-block jx-pt-1 jx-pr-1 jx-pb-0 jx-pl-2 jx-t-center">
+                        <a routerLink="/sessions/forgot-password"><span class="forgot jx-d-block jx-t-deco-none">Forgot password?</span></a>
+                    </div>
+                </form>
+
+                <ng-template #vendorForm1>
+                    <form [formGroup]="vendorIceboxForm" class="jx-p-1 jx-pt-0" (submit)="vendorIcebox()">
+
+                        <!-- Validation Message -->
+                        <div *ngIf="(vendorIceboxForm.controls['vendorEmail']?.errors?.required && (vendorIceboxForm.controls['vendorEmail']?.touched || vendorIceboxForm.controls['vendorEmail']?.dirty))" class="invalid animated bounceIn">
+                            Required.
+                        </div>
+                        <div *ngIf="(vendorIceboxForm.controls['vendorEmail']?.errors?.email)" class="invalid animated bounceIn">
+                            Kindly enter a valid email address.
+                        </div>
+                        <!--/End Validation Message -->
+
+                        <div class="input-bound jx-m-0">
+                            <img src="assets/images/sessions/mail_icon.png" alt="">
+                            <input type="email" formControlName="vendorEmail" class="Email_Address w-per-100 jx-p-1 jx-border jx-rounded jx-mt-0 jx-mr-2 jx-mb-05 jx-ml-0 jx-pl-4 jx-fs-13 lh-sm" placeholder="Vendor Email Address" autocomplete="new-vendorEmail" id="vendorEmail">
+                        </div>
+
+                        <!-- Validation Message -->
+                        <div *ngIf="(vendorIceboxForm.controls['vendorPassword'].errors?.required && (vendorIceboxForm.controls['vendorPassword'].touched || vendorIceboxForm.controls['vendorPassword'].dirty))" class="invalid animated bounceIn">
+                            Required.
+                        </div>
+                        <!--/End Validation Message -->
+
+                        <div class="input-bound jx-m-0">
+                            <img src="assets/images/sessions/pass.png" alt="" class="_password">
+                            <input type="password" formControlName="vendorPassword" class="password w-per-100 jx-p-1 jx-border jx-rounded jx-mt-0 jx-mr-2 jx-mb-05 jx-ml-0 jx-pl-4 jx-fs-13 lh-sm" placeholder="Vendor Password" autocomplete="new-vendorPassword" id="vendorPassword">
+                        </div>
+
+                        <!-- Validation Message -->
+                        <div *ngIf="(vendorIceboxForm.controls['vendorUsername'].errors?.required && (vendorIceboxForm.controls['vendorUsername'].touched || vendorIceboxForm.controls['vendorUsername'].dirty))" class="invalid animated bounceIn">
+                            Required.
+                        </div>
+                        <!--/End Validation Message -->
+
+                        <div class="input-bound jx-m-0">
+                            <img src="assets/images/sessions/acct_name.png" alt="" class="user">
+                            <input type="text" formControlName="vendorUsername" class="vendorUsername w-per-100 jx-p-1 jx-border jx-rounded jx-mt-0 jx-mr-2 jx-mb-05 jx-ml-0 jx-pl-4 jx-fs-13 lh-sm" placeholder="Vendor Username" autocomplete="new-vendorUsername" id="vendorUsername">
+                        </div>
+
+                        <div class="full jx-m-0">
+                            <button class="w-per-100 jx-p-1 jx-border-0 jx-fs-15 jx-t-uppercase lh-sm jx-border jx-rounded jx-m-1 jx-ml-0" type="submit" [disabled]="!iceboxForm.valid" id="submit_btn">
+                                {{_iceboxBtnMssg}}
+                            </button>
+                        </div>
+
+                        <div class="footer_links jx-m-0 jx-d-block jx-pt-1 jx-pr-1 jx-pb-0 jx-pl-2 jx-t-center">
+                            <!-- <a routerLink="/sessions/signin"><span class="already_have jx-d-block jx-t-deco-none">Already have an account?</span></a> -->
+                            <a routerLink="/sessions/forgot-password"><span class="forgot jx-d-block jx-t-deco-none">Forgot password?</span></a>
+                        </div>
+                    </form>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</section>

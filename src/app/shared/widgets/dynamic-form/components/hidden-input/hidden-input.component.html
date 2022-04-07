@@ -1,0 +1,6 @@
+<div class="row-container" [class.isEven]="isEven">
+    <div class="dynamic-field form-input" [formGroup]="group" style="display: none;">
+        <label *ngIf="config.label">{{ config.label }}</label>
+        <input [type]="config.valueType" [attr.placeholder]="config.placeholder" [formControlName]="config.name">
+    </div>
+</div>

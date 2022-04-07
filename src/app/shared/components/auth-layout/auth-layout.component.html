@@ -1,0 +1,8 @@
+<div class="auth-wrap" [ngClass]="[backgroundColor]" (window:resize)="onResize($event)">
+    <customizer [showCustomizer]="showCustomizer" (change)="changeBg($event)" (toggle)="toggleCustomizer()">
+    </customizer>
+
+    <div class="d-lg-flex">
+        <router-outlet></router-outlet>
+    </div>
+</div>

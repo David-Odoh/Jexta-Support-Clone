@@ -1,0 +1,14 @@
+label {
+    padding: 10px;
+    display: block;
+    background: var(--xplorer-background) !important;
+    margin: 50px 0 20px;
+    color: var(--xplorer-root-node-color);
+    font-size: 18px;
+    font-family: "OS R";
+    letter-spacing: 1px;
+}
+
+.jx-mt-0 {
+    margin-top: 0;
+}

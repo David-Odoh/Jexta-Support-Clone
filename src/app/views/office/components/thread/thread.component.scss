@@ -1,0 +1,138 @@
+.thread-wrap {
+    height: 100vh;
+    overflow-y: hidden;
+    .thread-content {
+        height: 65vh;
+        overflow-y: auto;
+    }
+}
+
+.dynamic-composer ::ng-deep .angular-editor .angular-editor-wrapper .angular-editor-textarea {
+    outline: none !important;
+    height: 145px !important;
+    transition: height .3s ease-in-out;
+    padding-bottom: 60px !important;
+    background: #fff !important;
+    border: 2px dashed #525c65a6 !important;
+    box-shadow: 0 6px 18px 0 rgba(0, 35, 90, 0.08), 0 0 2px 0 rgba(0, 35, 90, 0.06) !important;
+}
+
+.dynamic-composer ::ng-deep .angular-editor-toolbar {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease-in-out;
+    position: relative;
+    z-index: 40000;
+    margin: 0 3% 4%;
+    padding: .3rem;
+    max-width: 800px;
+    background-color: #fff !important;
+    border: none !important;
+    box-shadow: 0 6px 18px 0 rgba(0, 35, 90, 0.08), 0 0 12px 0 rgba(0, 35, 90, 0.06);
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: -12px;
+        left: 3.5em;
+        border: 0.75rem solid transparent;
+        border-top: none;
+        border-bottom-color: #fff;
+        filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+        transform: rotate(180deg);
+    }
+    &.hideBar {
+        pointer-events: none;
+        opacity: 0;
+    }
+}
+
+.composer-container {
+    .obscure-thread-content {
+        display: none;
+        background: #6ebd7b8c;
+        background: linear-gradient(-160deg, rgba(68, 181, 175, 0.3) 0%, rgba(83, 146, 199, 0.5) 100%);
+        position: absolute;
+        top: 66px;
+        // top: 0;
+        left: 0;
+        height: 60vh;
+        transition: display .5s ease-in-out;
+    }
+    &:focus-within .obscure-thread-content {
+        display: block;
+    }
+}
+
+.thread-container .composer-wrap {
+    border-top: 1px solid #d6e0ea;
+    background-color: #f5f7fb;
+    padding-top: 10px;
+}
+
+.dynamic-composer {
+    .composer-message-area {
+        position: relative;
+        height: auto;
+        margin-bottom: 0px;
+        transition: height .3s ease-in-out;
+        textarea {
+            outline: none;
+            border: none;
+        }
+         ::ng-deep .angular-editor-toolbar {
+            display: none !important;
+            // transition: display .5s ease-in-out;
+        }
+    }
+    &:focus-within .composer-message-area {
+        outline: none;
+        // height: 300px;
+        // margin-bottom: 40px;
+         ::ng-deep .angular-editor .angular-editor-wrapper .angular-editor-textarea {
+            height: 245px !important;
+        }
+         ::ng-deep .angular-editor-toolbar {
+            display: block !important;
+            opacity: 1 !important;
+            pointer-events: visible !important;
+        }
+    }
+    .composer-btns {
+        position: fixed;
+        bottom: 0;
+        right: 10%;
+        .dc-btn {
+            background-color: #fff;
+            border: 1px solid #d6e0ea;
+            float: left;
+            min-width: 2rem;
+            padding: .4rem 1rem;
+            vertical-align: middle;
+            &:hover,
+            &:focus {
+                background-color: #d6e0ea;
+            }
+            &.send {
+                outline: none;
+                color: #fff;
+                background-color: rgb(82 92 101);
+                padding: 10px 30px;
+                &.valid {
+                    background-color: rgba(35, 155, 55, 0.8);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .dynamic-composer .composer-btns {
+        position: fixed;
+        bottom: 60px;
+    }
+    .dynamic-composer .composer-message-area {
+        // margin-bottom: 80px;
+    }
+}

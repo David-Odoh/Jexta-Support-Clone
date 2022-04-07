@@ -1,0 +1,30 @@
+<div class="dialog-wrapper">
+  <div class="close-btn" (click)="close()" *ngIf="data.switch != 'verify-shop'">
+    <!-- <img src="assets/images/icons/close_orange.png" alt=""> -->
+  </div>
+  <div class="content-area">
+    <div *ngIf="data.switch == 'Switch Theme'">
+      <theme-switcher></theme-switcher>
+    </div>
+
+    <div *ngIf="data.switch == 'Settings'">
+      <app-settings></app-settings>
+    </div>
+
+    <!-- <div *ngIf="data.switch == 'Assign Resume Form'">
+      <assign-resume-form [data]="data.resume" [resumeStage]="data?.resumeStage"></assign-resume-form>
+    </div> -->
+
+    <div *ngIf="data.switch == 'Assign Resume Form Two'">
+      <assign-resume-form-two [data]="data.resume" [resumeStage]="data?.resumeStage"></assign-resume-form-two>
+    </div>
+
+    <div *ngIf="data.switch == 'Group Resume Assign Form'">
+      <group-resume-assign-form [data]="data.resume" [resumeStage]="data?.resumeStage"></group-resume-assign-form>
+    </div>
+
+    <div *ngIf="data.switch == 'Manually Change Language'">
+      <resume-language-form [data]="data"></resume-language-form>
+    </div>
+  </div>
+</div>

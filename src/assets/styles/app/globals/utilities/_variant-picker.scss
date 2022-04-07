@@ -1,0 +1,22 @@
+.variant-picker.button-type {
+    color: #7a7f9a !important;
+    .label {
+        letter-spacing: 2px;
+    }
+    .btn-group {
+        display: inline-block;
+    }
+    .option {
+        border-color: #d3d1d0;
+        float: left;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+    .option.active,
+    .option:focus,
+    .option:hover {
+        border-color: #dfdfdf !important;
+        background-color: #e6e6e6 !important;
+        box-shadow: none !important;
+    }
+}

@@ -1,0 +1,8 @@
+<div class="tickets-page-wrap jx-d-flex">
+    <div class="ticket-leftsidebar">
+        <app-tickets [title]="terms_from_dic[0]?.name"></app-tickets>
+    </div>
+    <div class="thread-viewer w-per-100" [class.thread-viewer-show]="openThread">
+        <app-thread (closeThread)="closeSelectedThread($event)"></app-thread>
+    </div>
+</div>

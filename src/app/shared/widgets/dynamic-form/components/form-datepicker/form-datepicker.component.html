@@ -1,0 +1,15 @@
+<div class="row-container" [class.isEven]="isEven">
+    <div class="dynamic-field form-input" [formGroup]="group">
+        <label *ngIf="config.label">{{ config.label }}</label>
+        <!-- <input [type]="config.valueType" [attr.placeholder]="config.placeholder" [formControlName]="config.name"> -->
+
+        <mat-form-field style=" position:relative; width:100%">
+            <input (dateChange)="changeDetection($event)" [formControlName]="config.name" [attr.placeholder]="config.placeholder" matInput [matDatepicker]="dp3" style="padding-left: 40px;">
+
+            <mat-datepicker-toggle matSuffix [for]="dp3" style="position:absolute;bottom:0px;left:5px;">
+            </mat-datepicker-toggle>
+
+            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+    </div>
+</div>

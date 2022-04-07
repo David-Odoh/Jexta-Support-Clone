@@ -1,0 +1,22 @@
+<div class="dynamic-composer">
+    <div class="composer-toolbar h-per-100">
+        <div class="jx-p-1 jx-mb-2 jx-d-flex jx-p-absolute" [class.hideBar]="!toolbarVisible">
+            <app-dynamic-composer-toolbar #editorToolbar *ngIf="config.toolbarPosition === 'top'" #editorToolbar [id]="id" [uploadUrl]="config.uploadUrl" [upload]="config.upload" [showToolbar]="toolbarVisible" [fonts]="getFonts()" [customClasses]="config.customClasses"
+                [defaultFontName]="config.defaultFontName" [defaultFontSize]="config.defaultFontSize" [hiddenButtons]="config.toolbarHiddenButtons" (execute)="executeCommand($event)"></app-dynamic-composer-toolbar>
+        </div>
+    </div>
+    <div class="composer jx-py-1 jx-px-2">
+        <div class="composer-message-area" tabindex="0" #editorWrapper>
+            <textarea class="h-per-100 w-per-100" name="" id="" cols="30" rows="10" #editor [attr.contenteditable]="config.editable" [attr.tabindex]="disabled ? -1 : tabIndex" [attr.translate]="config.translate" [attr.spellcheck]="config.spellcheck" [style.outline]="config.outline === false ? 'none': undefined"
+                (input)="onContentChange($event.target)" (focus)="onTextAreaFocus($event)" (blur)="onTextAreaBlur($event)" (click)="exec()" (keyup)="exec()" (mouseout)="onTextAreaMouseOut($event)"></textarea>
+        </div>
+        <div class="composer-btns jx-d-flex justify-content-end jx-gap-10">
+            <div class="other-actions">
+                <span class="dc-btn" ngbTooltip="Create Link" tooltipClass="jx-tip" placement="top"><i class="fa fa-link"></i></span>
+                <span class="dc-btn" ngbTooltip="Formatting Options" tooltipClass="jx-tip" placement="top" (click)="toggleToolBar()"><i class="fa fa-font"></i></span>
+                <span class="dc-btn" ngbTooltip="Add Attachments" tooltipClass="jx-tip" placement="top"><i class="fa fa-paperclip"></i></span>
+            </div>
+            <button class="dc-btn send">Send</button>
+        </div>
+    </div>
+</div>

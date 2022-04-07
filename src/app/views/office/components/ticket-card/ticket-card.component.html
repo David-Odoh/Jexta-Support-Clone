@@ -1,0 +1,22 @@
+<div class="ticket-card" (click)="exportIndex()" [ngClass]="[(activeThread == threadIndex && multiSelectActive == false) ? 'active-thread' : '', selected ? 'is-checked' : '', multiSelectActive ? 'selectable' : '']">
+    <div class="ticket-card-wrap">
+        <div class="icons-col jx-fs-20">
+            <span *ngIf="ticket?.hasAttachment" [ngbTooltip]="ticket?.attachmentCount + ' attachment(s)'" tooltipClass="jx-tip right" placement="right"><i class="las la-paperclip"></i></span>
+            <span *ngIf="ticket?.assigned" [ngbTooltip]="ticket?.agentName" tooltipClass="jx-tip right" placement="right"><i class="la la-user"></i></span>
+        </div>
+        <div class="info-col">
+            <div class="row-1 jx-d-flex justify-content-between">
+                <div class="card-from-to jx-fs-16">{{ticket?.senderName}}</div>
+                <div class="card-time jx-fs-12">{{formatDate(ticket?.createdDate)}}</div>
+            </div>
+            <div class="row-2">
+                <div class="card-title jx-fs-14 cubed-logo">{{ticket?.emailTitle}}</div>
+            </div>
+            <div class="row-3">
+                <div class="card-message jx-fs-12 jx-t-truncate">{{ticket?.emailBody}}</div>
+            </div>
+        </div>
+        <div class="image-overlay">
+        </div>
+    </div>
+</div>

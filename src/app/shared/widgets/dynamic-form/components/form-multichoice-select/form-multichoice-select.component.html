@@ -1,0 +1,40 @@
+<div class="row-container" [class.isEven]="isEven">
+    <div class="dynamic-field form-input jexta-select-wrapper" [formGroup]="group">
+        <label *ngIf="config.label">{{ config?.label }}</label>
+        <div class="multiselect-dropdown" (clickOutside)="close()">
+            <div class="jexta-select" [ngClass]="show_dropdown ? 'open': ''">
+                <span class="jexta-select_input" (click)="toggleDropdown()">
+                <span class="truncate">
+                    <ng-container *ngIf="!selection_ForDisplayOnly; else choiceMade">
+                      <span class="input">{{config.placeholder}}</span>
+                </ng-container>
+                <ng-template #choiceMade>
+                    <span class="input" *ngFor="let selection of selection_ForDisplayOnly">{{selection}}, &nbsp;</span>
+                </ng-template>
+                </span>
+                <div class="arrow"></div>
+                </span>
+                <!-- Dropdown -->
+                <div class="dropdown-list jexta-options" *ngIf="show_dropdown">
+                    <div class="filter-section">
+                        <div>
+                            <div class="uppercase filter-header">Multi-Choice</div>
+                            <form [formGroup]="form" #mcForm="ngForm" novalidate>
+                                <ul>
+                                    <li class="multiselect-item-checkbox jexta-option" *ngFor="let choice of multiChoice.controls; let i=index">
+                                        <input type="checkbox" [formControl]="choice" name="{{config.options[i].name}}">
+                                        <div (click)="toggleCheck(i, choice.value)">{{config.options[i].label}}</div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Shadow Input -->
+        <ng-template>
+            <input type="text" [formControlName]="config.name" name="config.name">
+        </ng-template>
+    </div>
+</div>

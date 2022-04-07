@@ -1,0 +1,5 @@
+<div class="ticket-list">
+    <div *ngFor="let ticket of tickets; let i = index">
+        <app-ticket-card [ticket]="ticket" [threadIndex]="i" [activeThread]="activeThread" (updateIndex)="updateActiveThread($event)" [multiSelectActive]="multiSelectActive"></app-ticket-card>
+    </div>
+</div>

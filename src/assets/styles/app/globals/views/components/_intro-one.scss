@@ -1,0 +1,75 @@
+.intro-one {
+    background-color: #f4f8fc;
+    background-image: url("/assets/images/products/red-kicks.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    min-height: 350px;
+    span {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+    }
+    h1 {
+        z-index: 99;
+        font-family: "Poppins", sans-serif;
+        font-size: 80px;
+        font-weight: 700;
+        padding: 0 40px;
+        border-radius: 50px;
+        text-transform: uppercase;
+    }
+    h1.center {
+        left: -50%;
+        position: relative;
+        letter-spacing: 5px;
+        color: #f4f8fc;
+        background: #ff6584c7;
+        box-shadow: 0 6px 18px 0 rgb(0 35 90 / 15%), 0 0 2px 0 rgba(0, 35, 90, .06);
+    }
+    h1.left {
+        bottom: 50px;
+        left: 90px;
+        color: #3f3d564d;
+        font-size: 40px;
+        position: absolute;
+    }
+    h1.right {
+        top: 50px;
+        right: 90px;
+        color: #3f3d564d;
+        font-size: 40px;
+        position: absolute;
+    }
+    button {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        outline: none;
+        transition: all 0.3s ease;
+        mix-blend-mode: hard-light;
+    }
+    button.one {
+        right: 14px;
+        bottom: 14px;
+        background-color: $purple-light;
+    }
+    button.two {
+        left: 34px;
+        top: 14px;
+        background-color: $purple-light;
+    }
+    &:hover {
+        button.one {
+            transform: scale(16.5);
+        }
+        button.two {
+            transform: scale(26.5);
+        }
+    }
+}

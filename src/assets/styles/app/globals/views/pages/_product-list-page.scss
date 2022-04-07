@@ -1,0 +1,10 @@
+.product-list-wrap {
+    margin-left: 77px;
+}
+
+@media (max-width: 991.98px) {
+    .product-list-wrap {
+        margin-left: 0;
+        overflow-x: hidden;
+    }
+}

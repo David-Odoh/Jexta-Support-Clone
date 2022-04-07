@@ -1,0 +1,63 @@
+<section class="session-wrap jx-d-flex justify-content-center align-items-center">
+    <div class="container jx-mx-auto jx-fs-16">
+        <div class="wrapper animated bounceInLeft">
+
+            <div class="side_cover_banner jx-d-grid jx-py-2 jx-px-0 jx-m-0 justify-content-center align-items-center">
+                <a style="text-align: center">
+                    <span class="icebox-logo jx-fs-42 jx-fw-normal jx-t-uppercase lh-sm jx-ls-12" style="color: #fff;">
+                        Jexta
+                    </span>
+                    <p>
+                        <span routerLink="/sessions/signin" class="signup_btn jx-d-lg-block jx-mt-3 jx-p-1 jx-fs-18 cursor-pointer">
+                            SignIn
+                        </span>
+                    </p>
+                    <p>
+                        <span routerLink="/store" class="signup_btn jx-d-lg-block jx-mt-1 jx-p-1 jx-fs-18 cursor-pointer">
+                            Jexta Central
+                        </span>
+                    </p>
+                </a>
+            </div>
+
+            <div class="icebox jx-p-2 jx-rounded-0 jx-mt-0 jx-border-0">
+                <div id="icebox_title" class="jx-p-2 jx-pb-1 jx-d-block w-per-100 jx-t-center jx-fs-30 lh-sm">Enter Your Email</div>
+
+                <form [formGroup]="verificationForm" (submit)="verification()" class="jx-p-1">
+                    <div class="jx-m-0 jx-p-relative">
+                        <span class="country-code">Email</span>
+                        <input type="text" formControlName="email" class="phone jx-fs-14 lh-sm jx-t-left jx-my-0 jx-ml-1 jx-mr-0 align-middle" autocomplete="new-password">
+                    </div>
+
+                    <!-- Validation Message -->
+                    <div *ngIf="(verificationForm.controls['email'].errors?.required && (verificationForm.controls['email'].touched || verificationForm.controls['email'].dirty))" class="invalid animated bounceIn">
+                        Required.
+                    </div>
+                    <div *ngIf="(verificationForm.controls['email'].errors?.minlength)" class="invalid animated bounceIn">
+                        Number should be 10 digits long.
+                    </div>
+                    <div *ngIf="(verificationForm.controls['email'].errors?.email)" class="invalid animated bounceIn">
+                        Kindly enter a valid email address.
+                    </div>
+                    <!--/End Validation Message -->
+
+                    <div>
+                        <span class="info_span jx-t-center jx-py-1 jx-px-2 jx-d-block">Please enter your email to recieve a password reset link </span>
+                    </div>
+
+                    <div class="full jx-m-0">
+                        <button class="w-per-100 jx-p-1 jx-border-0 jx-fs-15 jx-t-uppercase lh-sm jx-border jx-rounded jx-m-1 jx-ml-0" type="submit" [disabled]="!verificationForm.valid" id="submit_btn">
+                            {{_iceboxBtnMssg}}
+                        </button>
+                    </div>
+
+                    <div class="footer_links jx-m-0 jx-d-block jx-pt-1 jx-pr-1 jx-pb-0 jx-pl-2 jx-t-center">
+                        <a routerLink="/sessions/signin"><span class="already_have jx-d-block jx-t-deco-none">I now remember my passord!</span></a>
+                        <a routerLink="/sessions/signup"><span class="forgot jx-d-block jx-t-deco-none">Go to Knowledgebase?</span></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>

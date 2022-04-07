@@ -1,0 +1,24 @@
+.tickets-container .search-input ::ng-deep .checkbox_label:before {
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: 0px !important;
+    border: none !important;
+    background: rgba(35, 155, 55, 0.66) !important;
+    border-radius: 2px !important;
+}
+
+.tickets-container .search-input ::ng-deep .checkbox_label:after {
+    width: 18px !important;
+    height: 4px !important;
+    margin-top: 0px !important;
+    border-color: #fff !important;
+    border-width: 0 0 4px 4px !important;
+}
+
+.create-new {
+    padding: 0 6px;
+    outline: none;
+    &:hover {
+        background-color: #d6e0ea;
+    }
+}

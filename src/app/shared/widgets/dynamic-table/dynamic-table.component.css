@@ -1,0 +1,162 @@
+table.jextaly-float {
+    background: var(--jf-background);
+    padding: var(--jf-padding);
+    border: var(--jf-border);
+    box-shadow: var(--jf-boxshadow);
+}
+
+table {
+    font-family: 'OS R';
+    border-collapse: collapse;
+    width: 100%;
+    position: relative;
+    background: var(--jf-background);
+    padding: var(--jf-padding);
+    border: var(--jf-border);
+}
+
+td,
+th {
+    border: var(--table-border);
+    text-align: left;
+    padding: 12px 8px;
+    font-size: 14px;
+}
+
+.float-to-center {
+    position: absolute;
+    top: 45%;
+    left: 40%;
+}
+
+tr:nth-child(odd) {
+    background: var(--table-tr-background-odd);
+    color: var(--table-tr-color-odd);
+}
+
+tr:nth-child(even) {
+    background: var(--table-tr-background-even);
+    color: var(--table-tr-color-even);
+}
+
+th {
+    background: var(--table-th-background);
+    color: var(--table-th-color);
+    font-weight: bold;
+}
+
+.btn-group {
+    display: flex;
+}
+
+tr:last-child {
+    border-bottom: 1px solid var(--table-tr-background-odd);
+}
+
+tr:nth-child(odd) .btn-group button {
+    color: var(--table-tr-color-odd);
+}
+
+tr:nth-child(even) .btn-group button {
+    color: var(--table-tr-color-even);
+}
+
+.btn-group button {
+    padding: 6px 12px;
+    border: 1px solid;
+    border-left: none;
+}
+
+.btn-group button:first-child {
+    border: 1px solid;
+}
+
+.pagination-wrapper {
+    margin-top: 40px;
+}
+
+.my-pagination {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.my-pagination /deep/ .ngx-pagination .current,
+.my-pagination /deep/ .ngx-pagination li a {
+    border-width: 2px;
+    border-color: var(--pagination-btn-border);
+    border-style: solid;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    line-height: 30px;
+    padding: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: var(--pagination-btn-color);
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-previous a,
+.my-pagination /deep/ .ngx-pagination .pagination-next a {
+    border: none;
+    display: block;
+    padding: 0.1875rem 0.625rem;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    color: var(--pagination-btn-previous-next-color);
+}
+
+.my-pagination /deep/ .ngx-pagination li a:hover {
+    background: var(--pagination-btn-background-hover);
+    color: var(--pagination-btn-color-hover);
+    border-color: var(--pagination-btn-border-hover);
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-previous a:hover,
+.my-pagination /deep/ .ngx-pagination .pagination-next a:hover {
+    background: var(--pagination-btn-previous-next-background-hover);
+    color: var(--pagination-btn-previous-next-color-hover);
+}
+
+.my-pagination /deep/ .ngx-pagination .disabled {
+    color: var(--pagination-btn-previous-next-color);
+    opacity: 0.65;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background-color: var(--pagination-btn-background-active);
+    color: var(--pagination-btn-color-active);
+    border-color: var(--pagination-btn-border-active);
+}
+
+.internet-issue {
+    margin: 20px 0;
+    display: block;
+    text-align: center;
+}
+
+.internet-issue i {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.activate_deactivate {
+    position: relative;
+}
+
+.activate_deactivate i {
+    font-size: 32px;
+    position: absolute;
+    top: 11px;
+    left: 12px;
+}
+
+.activate_deactivate i {
+    color: var(--toggle-color);
+}
+
+.activate_deactivate i.activated {
+    color: var(--toggle-color-activate);
+}

@@ -1,0 +1,11 @@
+<nav>
+    <ng-container *ngFor="let acc_link of accountLinks">
+        <a class="dropdown-item jx-fs-16 jx-t-capitalize">{{acc_link?.name}}
+            <i class="float-right text-muted" [ngClass]="acc_link?.iconClasses"></i>
+        </a>
+    </ng-container>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item jx-fs-16">Sign Out
+        <i class="ri-close-line float-right text-muted"></i>
+    </a>
+</nav>

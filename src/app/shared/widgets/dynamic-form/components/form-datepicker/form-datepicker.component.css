@@ -1,0 +1,112 @@
+.row-container {
+    padding: 5px 40px;
+}
+
+.isEven {
+    background: #4faf5f17;
+    /* border-top: 1px solid #4faf5f52; */
+    /* border-bottom: 1px solid #4faf5f52; */
+}
+
+input {
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid var(--xplorer-root-node-color);
+    outline: none;
+    padding: 10px 15px;
+    color: var(--xplorer-root-node-color);
+}
+
+input:focus {
+    color: var(--jf-input-focus-color);
+}
+
+.dynamic-field {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    margin-bottom: 10px;
+    max-width: 500px;
+}
+
+.dynamic-field label {
+    text-align: right;
+    margin-right: 10px;
+    color: var(--select-color);
+}
+
+input.ng-invalid.ng-dirty.ng-touched {
+    border-color: rgb(203, 50, 50);
+}
+
+
+/* Date Drop Down */
+
+::ng-deep svg.mat-datepicker-toggle-default-icon,
+::ng-deep .mat-calendar-body-label,
+::ng-deep .mat-calendar-body-cell-content,
+::ng-deep .mat-datepicker-content .mat-calendar-next-button,
+::ng-deep .mat-datepicker-content .mat-calendar-previous-button,
+::ng-deep .mat-datepicker-toggle {
+    color: var(--download-filter-color) !important;
+}
+
+::ng-deep .mat-calendar-arrow {
+    border-top-color: var(--download-filter-color) !important;
+}
+
+::ng-deep .mat-calendar-body-today:not(.mat-calendar-body-selected) {
+    border-color: var(--tab-background-active);
+}
+
+::ng-deep .cdk-keyboard-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+::ng-deep .cdk-program-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+::ng-deep .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+    background-color: rgba(0, 0, 0, 0.35) !important;
+}
+
+::ng-deep mat-calendar {
+    background: var(--datepicker-background) !important;
+    color: var(--download-filter-color) !important;
+    font-family: "OS R" !important;
+}
+
+::ng-deep span.mat-button-wrapper {
+    font-family: "OS R";
+}
+
+::ng-deep .mat-calendar-body-selected {
+    /* background-color: var(--download-filter-background) !important;
+    color: var(--explorer-search-color) !important; */
+    background-color: rgb(215, 47, 63) !important;
+    color: #fff !important
+}
+
+::ng-deep .mat-calendar-table-header {
+    color: #fff;
+}
+
+::ng-deep .mat-calendar-table-header tr {
+    background: #d72f3f;
+}
+
+::ng-deep .mat-calendar-table-header tr:nth-child(2) {
+    display: none !important;
+}
+
+::ng-deep .mat-calendar-table-header tr th {
+    text-align: center;
+    padding: 4px 0 !important;
+}
+
+@media (max-width: 620px) {
+    .dynamic-field {
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+    }
+    .row-container {
+        padding: 5px 20px;
+    }
+}

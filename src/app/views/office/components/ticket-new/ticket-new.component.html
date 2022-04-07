@@ -1,0 +1,50 @@
+<div class="title w-per-100 jx-p-05 jx-mb-1 cubed-logo">
+    <h2 class="jx-fs-24 jx-mb-0" (click)="submitAll()">Create New {{terms[0]?.name}}</h2>
+</div>
+<div class="-tab-wrapper">
+    <div class="-tab-nav">
+        <ul class="-tab-group jx-d-flex jx-gap-2 justify-content-between align-items-center jx-fs-14 jx-mb-0">
+            <li class="-tab-trigger" [class.active]="viewMode == 'tab1'" rel="tab1" (click)="viewMode ='tab1';">Users
+            </li>
+            <li class="-tab-trigger" [class.active]="viewMode == 'tab2'" rel="tab2" (click)="viewMode ='tab2'">Options
+            </li>
+            <li class="-tab-trigger" [class.active]="viewMode == 'tab3'" rel="tab3" (click)="viewMode ='tab3';">Visibility & Tags
+            </li>
+        </ul>
+    </div>
+    <div class="-tab-body-group">
+        <div id="tab1" class="-tab-body" [class.jx-d-block]="viewMode == 'tab1'">
+            <div class="tab-wrapper">
+                <!-- Busy -->
+                <span class="form-overlay" *ngIf="busy"><i class="la la-refresh icon-spin cubed-logo"></i></span>
+                <dynamic-form [float]="float_style" [config]="config1" #form1="dynamicForm" (submit)="submit1($event)"></dynamic-form>
+            </div>
+        </div>
+        <div id="tab2" class="-tab-body" [class.jx-d-block]="viewMode == 'tab2'">
+            <div class="tab-wrapper">
+                <dynamic-form [float]="float_style" [config]="config2" #form2="dynamicForm" (submit)="submit2($event)"></dynamic-form>
+            </div>
+        </div>
+        <div id="tab3" class="-tab-body" [class.jx-d-block]="viewMode == 'tab3'">
+            <div class="tab-wrapper">
+                <dynamic-form [float]="float_style" [config]="config3" #form3="dynamicForm" (submit)="submit3($event)"></dynamic-form>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="-tab-body-group" [ngSwitch]="viewMode">
+        <div id="tab1" class="-tab-body" *ngSwitchCase="'tab1'">
+            <div class="tab-wrapper">
+                <span class="form-overlay" *ngIf="busy"><i class="la la-refresh icon-spin cubed-logo"></i></span>
+                <dynamic-form [float]="float_style" [config]="config1" #form1="dynamicForm" (submit)="submit1($event)"></dynamic-form>
+            </div>
+        </div>
+        <div id="tab2" class="-tab-body" *ngSwitchCase="'tab2'">
+        </div>
+        <div id="tab3" class="-tab-body" *ngSwitchCase="'tab3'">
+            <div class="tab-wrapper">
+                <dynamic-form [float]="float_style" [config]="config3" #form3="dynamicForm" (submit)="submit3($event)"></dynamic-form>
+            </div>
+        </div>
+    </div> -->
+</div>

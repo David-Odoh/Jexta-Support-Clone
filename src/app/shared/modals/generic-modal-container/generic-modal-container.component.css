@@ -1,0 +1,56 @@
+ /* Dialog Styles */
+ 
+ ::ng-deep .cdk-overlay-dark-backdrop {
+    background: var(--dialog-backdrop);
+}
+
+::ng-deep .cdk-overlay-pane,
+::ng-deep .cdk-global-overlay-wrapper .cdk-overlay-pane,
+::ng-deep .mat-sidenav-container {
+    max-width: auto !important;
+    width: auto !important;
+    height: auto !important;
+    position: relative !important;
+}
+
+::ng-deep .mat-dialog-container {
+    background: var(--dialog-background);
+    padding: 7% !important;
+    width: 500px !important;
+    /* overflow-x: hidden !important; */
+}
+
+.dialog-wrapper {
+    display: block;
+    overflow-y: auto;
+}
+
+.arrow_down_block {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 0px !important;
+    background: transparent !important;
+}
+
+.dialog-wrapper {
+    overflow-x: hidden;
+}
+
+.close-btn>img {
+    display: block;
+    position: absolute;
+    right: -60px;
+    top: 10px;
+    height: 28px;
+    cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .dialog-wrapper {
+        display: block;
+        overflow-y: auto;
+        height: 100vw;
+    }
+}

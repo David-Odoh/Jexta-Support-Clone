@@ -1,0 +1,17 @@
+<div class="row-container" [class.isEven]="isEven">
+    <div class="dynamic-field form-input" [formGroup]="group">
+        <label *ngIf="config.label">{{ config.label }}</label>
+        <div style="display: flex;" (clickOutside)="getInput(myInput)">
+            <input type="text" style="display: none;" [formControlName]="config.name">
+            <input [type]="config.valueType" [attr.placeholder]="config.placeholder" #myInput>
+            <div class="button" (click)="getInput(myInput)">Add</div>
+            <div class="button" (click)="addEcowasStates()" style="background:#d72f3f"><i class="la la-plus"></i> ECOWAS</div>
+        </div>
+        <div class="option-wrapper" *ngIf="options?.length > 0">
+            <div class="list-view" *ngFor="let option of options" style="text-transform: capitalize;">
+                {{option}}
+                <i class="la la-close" (click)="remove(option)"></i>
+            </div>
+        </div>
+    </div>
+</div>

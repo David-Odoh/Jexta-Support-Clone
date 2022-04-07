@@ -1,0 +1,26 @@
+.intro-two {
+    background-color: #f4f8fc;
+    overflow: hidden;
+    position: relative;
+    min-height: 140px;
+    .ux-tabs {
+        width: auto;
+        color: #878a92;
+        &>ul {
+            gap: 30px;
+            li {
+                cursor: pointer;
+                span {
+                    display: none;
+                }
+                a {
+                    color: #878a92;
+                }
+            }
+        }
+    }
+}
+
+.empty span {
+    color: #7a7f9a;
+}

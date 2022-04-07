@@ -1,0 +1,6 @@
+<div class="row-container" [class.isEven]="isEven">
+    <div class="dynamic-field form-input" [formGroup]="group">
+        <label *ngIf="config.label">{{ config.label }}</label>
+        <ckeditor [attr.placeholder]="config.placeholder" [formControlName]="config.name" [config]="ckeConfig"></ckeditor>
+    </div>
+</div>

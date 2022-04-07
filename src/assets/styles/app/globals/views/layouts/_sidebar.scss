@@ -1,0 +1,71 @@
+.sidebar {
+    min-width: 77px;
+    max-width: 77px;
+    height: 100vh;
+    min-height: 570px;
+    background-color: #fff;
+    display: flex;
+    z-index: 9;
+    box-shadow: 0 2px 4px rgba(15, 34, 58, .12);
+    position: fixed;
+    z-index: 40000;
+}
+
+.cubed-logo {
+    line-height: 70px;
+}
+
+.nav-item {
+    &:focus {
+        outline: none;
+    }
+    .nav-link {
+        width: 56px;
+        height: 56px;
+        line-height: 56px;
+        border-radius: 8px;
+        color: $icon-gray;
+        &.active {
+            background-color: #f4f8fc !important;
+        }
+        &.active,
+        &:focus {
+            outline: none !important;
+        }
+        & .profile-user {
+            height: 36px;
+            width: 36px;
+            background-color: #f0eff5;
+            padding: 3px;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        height: 60px;
+        min-width: 100%;
+        min-height: auto;
+        display: block;
+        border-top: 1px solid #f0eff5;
+        & .nav-item {
+            flex-basis: 0;
+            flex-grow: 1;
+        }
+        &-wrapper.h-100vh {
+            min-height: 60px;
+        }
+        & .nav-item .nav-link {
+            font-size: 22px;
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+        }
+        & .navlist {
+            width: 100vw;
+            height: 60px;
+        }
+    }
+}

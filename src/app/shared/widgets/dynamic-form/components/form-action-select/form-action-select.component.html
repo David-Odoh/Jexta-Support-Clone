@@ -1,0 +1,19 @@
+<div class="row-container" [class.isEven]="isEven">
+    <div class="dynamic-field form-select jexta-select-wrapper" [formGroup]="group">
+        <label *ngIf="config.label">{{ config.label }}</label>
+        <div class="jexta-select" [ngClass]="dropdown ? 'open': ''" (click)="toggleSelect()" (clickOutside)="close()">
+            <div class="jexta-select_input">
+                <!-- Actual Input -->
+                <input type="text" [formControlName]="config.name" style="display: none;" readonly>
+                <!-- Decoy Input -->
+                <input type="text" [value]="decoyValue" class="decoy" [placeholder]="config.placeholder" readonly>
+                <div class="arrow"></div>
+            </div>
+            <div class="jexta-options" [style.z-index]="config?.z_index">
+                <ng-container *ngFor="let option of config.options">
+                    <button type="submit" class="jexta-option" [ngClass]="option == selectedOption ? 'selected' : ''" (click)="updateSelectValue(option)">{{ option.value }}</button>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

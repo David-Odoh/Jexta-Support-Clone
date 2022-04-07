@@ -1,0 +1,94 @@
+.dynamic-composer {
+    .composer-toolbar {
+        &>div {
+            position: absolute;
+            z-index: 40000;
+            margin-left: 4%;
+            margin-top: -90px;
+            box-shadow: 0 6px 18px 0 rgba(0, 35, 90, 0.08), 0 0 2px 0 rgba(0, 35, 90, 0.06);
+            &:after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                bottom: -12px;
+                left: 3.5em;
+                border: 0.75rem solid transparent;
+                border-top: none;
+                border-bottom-color: #fff;
+                filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+                transform: rotate(180deg);
+            }
+            &.hideBar {
+                pointer-events: none;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.dynamic-composer {
+    .composer-message-area {
+        position: relative;
+        height: 100px;
+        margin-bottom: 40px;
+        transition: height .3s ease-in-out;
+        // &:focus-within {
+        //     outline: none;
+        //     height: 200px;
+        // }
+        textarea {
+            outline: none;
+            border: none;
+        }
+    }
+    &:focus-within .composer-message-area {
+        outline: none;
+        height: 200px;
+    }
+    .composer-btns {
+        position: fixed;
+        bottom: 0;
+        background: #fff;
+        right: 10%;
+        .dc-btn {
+            background-color: #fff;
+            border: 1px solid #d6e0ea;
+            float: left;
+            min-width: 2rem;
+            padding: .4rem 1rem;
+            vertical-align: middle;
+            &:hover,
+            &:focus {
+                background-color: #d6e0ea;
+            }
+            &.send {
+                outline: none;
+                background-color: rgba(35, 155, 55, 0.8);
+                color: #fff;
+                padding: 10px 30px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .dynamic-composer .composer-btns {
+        position: fixed;
+        bottom: 60px;
+    }
+}
+
+// .composer-toolbar:before {
+//     content: "";
+//     position: absolute;
+//     width: 0;
+//     height: 0;
+//     bottom: 100%;
+//     left: 3.5em;
+//     margin-bottom: 90px;
+//     border: 0.75rem solid transparent;
+//     border-top: none;
+//     border-bottom-color: #fff;
+//     filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+// }

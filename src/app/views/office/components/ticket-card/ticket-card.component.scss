@@ -1,0 +1,99 @@
+.ticket-card {
+    &:hover,
+    &.active-thread {
+        background-color: #fff !important;
+        box-shadow: 0 6px 18px 0 rgba(141, 141, 141, 0.18), 0 0 2px 0 rgba(0, 35, 90, 0.06);
+    }
+    .ticket-card-wrap {
+        border-bottom: 1px solid #d6e0ea;
+        padding: 20px;
+        display: flex;
+        gap: 20px;
+        outline: none;
+        cursor: pointer;
+        .icons-col {
+            color: #8997a4ba;
+        }
+        .cubed-logo {
+            line-height: 24px;
+        }
+        .card-from-to {
+            font-weight: 600;
+        }
+        .card-title {
+            margin-bottom: .4rem;
+            color: #7a7f9a;
+            font-weight: 600;
+        }
+        .card-time {
+            color: #8997a4;
+        }
+        .card-message {
+            color: #656a6f;
+        }
+        .jx-t-truncate {
+            height: 34px;
+        }
+    }
+}
+
+// sdfghjjjjjjjjjjjjjjjjjjjjjjj
+.ticket-card.selectable {
+    .ticket-card-wrap {
+        position: relative;
+        overflow: hidden;
+        &:hover {
+            cursor: pointer;
+            &:after {
+                bottom: 0;
+                color: rgba(255, 255, 255, 1);
+                transition: (all .15s);
+            }
+            .image-overlay {
+                background-color: rgba(35, 155, 55, .33);
+                transition: (all .15s);
+            }
+        }
+        &:after {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: -6em;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-family: "FontAwesome";
+            font-size: 1em;
+            text-align: center;
+            content: "\f00c";
+            color: rgba(255, 255, 255, 0);
+            color: #fff;
+            transition: (all .15s);
+        }
+        .image-overlay {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            content: "";
+            background-color: rgba (255, 255, 255, 0);
+            transition: (backgroundColor, .15s);
+        }
+    }
+    // .is-checked animations
+    &.is-checked {
+        .ticket-card-wrap {
+            &:after {
+                font-size: 2.26em;
+                bottom: 0;
+                transition: all .15s;
+            }
+            .image-overlay {
+                background-color: rgb(35 155 55 / 58%);
+                border: 4px solid rgb(35 155 55 / 62%);
+            }
+        }
+    }
+}

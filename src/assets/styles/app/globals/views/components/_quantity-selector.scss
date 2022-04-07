@@ -1,0 +1,35 @@
+.quantity-selector {
+    color: #7a7f9a !important;
+    .label {
+        letter-spacing: 2px;
+    }
+    input {
+        width: 38px;
+        border: none;
+        text-align: center;
+    }
+    input:focus {
+        outline: none;
+    }
+    .btn-group {
+        border: 1px solid #dfdfdf !important;
+        height: 38px;
+        padding: 4px;
+        max-width: 200px;
+    }
+    .control {
+        border-color: #d3d1d0;
+        height: 30px;
+        max-width: 30px;
+        padding: 0;
+        margin: 0;
+        border-radius: 100% !important;
+    }
+    .control.active,
+    .control:focus,
+    .control:hover {
+        border-color: #dfdfdf !important;
+        background-color: #e6e6e6 !important;
+        box-shadow: none !important;
+    }
+}

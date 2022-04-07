@@ -1,0 +1,17 @@
+<div class="row-container" [class.isEven]="isEven">
+    <div class="dynamic-field form-input" [formGroup]="group">
+        <label *ngIf="config.label">{{ config.label }}</label>
+        <div style="display: flex; position: relative;" (clickOutside)="closeSearchResults()">
+            <input [type]="config.valueType" [attr.placeholder]="config.placeholder" [formControlName]="config.name" autocomplete="new-search" readonly (click)="openSearchResults($event)">
+            <div class="button" (click)="openDialog(config?.whereToCreate)" style="background:#d72f3f"><i class="la la-plus"></i> NEW</div>
+            <div class="search-drop-down" [style.z-index]="config?.z_index" *ngIf="showSearchPane">
+                <span>
+                    <input type="text" class="search" (keyup)="searchTerm$.next($event.target.value)" autocomplete="new-search" placeholder="search for email">
+                </span>
+                <ul class="result-list">
+                    <li *ngFor="let result of searchResults" (click)="chooseResult(result)">{{result}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
